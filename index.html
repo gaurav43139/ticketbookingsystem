@@ -1,13 +1,104 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React + TS</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+      }
+      .section {
+        margin: 20px 0;
+      }
+      .section-title {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .seat-grid {
+        display: grid;
+        gap: 10px;
+        margin: 10px 0;
+      }
+      .vip .seat-grid {
+        grid-template-columns: repeat(5, 40px);
+      }
+      .general .seat-grid {
+        grid-template-columns: repeat(6, 40px);
+      }
+      .economy .seat-grid {
+        grid-template-columns: repeat(8, 40px);
+      }
+      .seat {
+        width: 40px;
+        height: 40px;
+        background-color: lightgreen;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+      }
+      .seat.booked {
+        background-color: lightcoral;
+        cursor: not-allowed;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div class="container">
+      <h1>Diljit Dosanjh Concert Ticket Booking</h1>
+      <p>
+        <strong>Scenario:</strong> You need to build a booking system for the
+        Diljit Dosanjh concert. The system allows users to book seats for the
+        concert, divided into three sections: VIP, General, and Economy.
+      </p>
+
+      <div class="section">
+        <div class="section-title">1. Display Sections:</div>
+        <p>Show three sections: VIP, General, and Economy.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">2. Seat Layout:</div>
+        <p>Each section has a different seat layout:</p>
+        <ul>
+          <li><strong>VIP Section:</strong> 5x5 grid (25 seats)</li>
+          <li><strong>General Section:</strong> 6x6 grid (36 seats)</li>
+          <li><strong>Economy Section:</strong> 8x8 grid (64 seats)</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">3. Seat Status:</div>
+        <p>
+          Seats should be marked as <strong>booked</strong> after a user selects
+          them. A user can book a maximum of 5 seats.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">4. Booking Confirmation:</div>
+        <p>
+          After selecting seats (max 5), the system should confirm the booking
+          and show the seat numbers. Once booked, seats should not be available
+          for further booking.
+        </p>
+      </div>
+      <div class="section">
+        <div class="section-title">5. Working Solution:</div>
+      </div>
+      <div id="root"></div>
+    </div>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
